@@ -6,3 +6,4 @@ RUN apk add -U openssl curl && \
     kubectl version --client
 
 ENTRYPOINT ['kubectl']
+CMD ['help']
