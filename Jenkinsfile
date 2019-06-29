@@ -28,7 +28,7 @@ spec:
           url: 'https://github.com/xcaliburinhand/kubectl-container.git'
         container(name: 'kaniko', shell: '/busybox/sh') {
           sh '''#!/busybox/sh
-          /kaniko/executor -f `pwd`/dockerfile -c `pwd` --skip-tls-verify --destination=containers.internal/kubectl
+          /kaniko/executor -f `pwd`/Dockerfile -c `pwd` --skip-tls-verify --destination=containers.internal/kubectl
           '''
         }
       }
