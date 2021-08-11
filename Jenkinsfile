@@ -1,23 +1,7 @@
 pipeline {
   agent {
     kubernetes {
-      label "kaniko"
-      yaml """
-kind: Pod
-metadata:
-  name: kaniko
-spec:
-  containers:
-  - name: kaniko
-    env:
-    - name: container
-      value: kube
-    image: gcr.io/kaniko-project/executor:debug-v0.10.0
-    imagePullPolicy: Always
-    command:
-    - /busybox/cat
-    tty: true
-"""
+      inheritFrom 'kaniko'
     }
   }
   stages {
